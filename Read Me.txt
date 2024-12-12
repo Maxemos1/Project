@@ -1,0 +1,17 @@
+# ZK-STARK Proof Application
+
+## نظرة عامة
+
+تطبيق مفتوح المصدر يستخدم إثبات ZK-STARK على شبكة Starknet لإثبات الملكية بطريقة آمنة ولامركزية.
+
+## المتطلبات
+- Cairo-lang مثبت.
+- شبكة Starknet متاحة (testnet).
+- Node.js و npm.
+
+## تعليمات التشغيل
+
+### إعداد العقد الذكي
+1. قم بتثبيت Cairo:
+   ```bash
+   pip install cairo-lang

@@ -1,0 +1,52 @@
+1. المشروع الأساسي
+سننشئ تطبيقًا يوضح استخدام تقنية ZK-STARK في شبكة Starknet. كمثال، يمكننا إنشاء تطبيق لإثبات ملكية بيانات بطريقة سرية.
+
+مكونات المشروع:
+Backend: مكتوب بلغة Cairo لإثبات ZK-STARK.
+Frontend: واجهة بسيطة للتفاعل مع العقد الذكي.
+Integration: دمج بين الواجهة والعقد الذكي باستخدام مكتبة Starknet.js.
+
+
+2. خطوات التنفيذ
+أ. إعداد البيئة
+تثبيت Cairo:
+
+curl -L https://github.com/starkware-libs/cairo/releases/download/v0.9.1/cairo-lang.tar.gz | tar -xz
+export PATH=$PATH:$(pwd)/cairo/bin
+
+
+إعداد Starknet.js:
+
+تثبيت المكتبة باستخدام npm:
+npm install starknet
+
+
+ب. كتابة العقد الذكي
+أنشئ ملفًا باسم proof_contract.cairo:
+
+%lang starknet
+
+@contract
+namespace ProofContract:
+    # إثبات الملكية
+    func submit_proof{syscall_ptr: felt*}() -> (success: felt):
+        return (1)
+    end
+end
+
+
+
+ج. بناء الواجهة
+قم بإنشاء واجهة تفاعلية باستخدام HTML/CSS وجافا سكريبت.
+ربط الواجهة بالعقد الذكي باستخدام Starknet.js.
+
+
+
+3. تشغيل المشروع
+نشر العقد الذكي:
+
+
+starknet deploy --contract proof_contract.cairo
+
+
+
